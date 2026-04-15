@@ -2,161 +2,323 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iftiar Uddin Ahmed · Product Manager Portfolio</title>
-  <!-- Tailwind CSS + Inter Font -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Iftiar Uddin Ahmed · Fintech & AI Product Manager</title>
+  <!-- Google Fonts + Tailwind + Font Awesome -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .metric-number { font-size: 2rem; font-weight: 700; line-height: 1.2; }
-    .case-card {
-      transition: all 0.2s ease;
-      border-left: 4px solid #00A3A3;
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #f8fafc; scroll-behavior: smooth; }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
-    .case-card:hover { background-color: #f9fafb; }
-    details > summary {
-      list-style: none;
-      cursor: pointer;
-      font-weight: 600;
+    .card-hover {
+      transition: all 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+    .metric-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .nav-link {
+      position: relative;
+      font-weight: 500;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #14b8a6;
+      transition: width 0.2s;
+    }
+    .nav-link:hover:after { width: 100%; }
+    .japan-badge {
+      background: rgba(20,184,166,0.1);
+      border-left: 3px solid #14b8a6;
+    }
+    .skill-tag {
+      background: #f1f5f9;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
       color: #0f172a;
     }
-    details > summary::-webkit-details-marker { display: none; }
-    details[open] > summary { margin-bottom: 1rem; }
+    @media (max-width: 768px) {
+      .metric-number { font-size: 1.5rem; }
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body>
 
-  <div class="max-w-4xl mx-auto px-5 py-12 md:py-16">
-    
-    <!-- HERO -->
-    <div class="border-b border-gray-200 pb-8 mb-8">
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Iftiar Uddin Ahmed</h1>
-      <p class="text-xl text-gray-600 mt-2">Fintech & AI Product Management · Platform Scaling · Cross-functional Leadership</p>
-      
-      <!-- Japan signals (prominent) -->
-      <div class="flex flex-wrap gap-3 mt-4 text-sm font-medium">
-        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">🇯🇵 Engineer Visa: valid Dec 2029</span>
-        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">📚 Japanese N5→N4 (TCJ Osaka)</span>
-        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">📍 Tokyo / Osaka · Hybrid/On-site</span>
-        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">⚡ Available immediately</span>
-      </div>
-      
-      <!-- Contact -->
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 mt-5 text-sm">
-        <span>✉️ iiftiarahmed@gmail.com</span>
-        <span>📞 090-8152-7117</span>
-        <span>🔗 <a href="https://www.linkedin.com/in/iftiarahmed/" target="_blank"> linkedin.com/in/iftiar </a>a></span>
-      </div>
-      
-      <!-- Metric badges (scan-first) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-        <div><div class="metric-number text-teal-700">$8M+</div><div class="text-xs uppercase tracking-wide text-gray-500">Annual transactions</div></div>
-        <div><div class="metric-number text-teal-700">40%</div><div class="text-xs uppercase tracking-wide text-gray-500">YoY user growth</div></div>
-        <div><div class="metric-number text-teal-700">35%</div><div class="text-xs uppercase tracking-wide text-gray-500">Reconciliation errors ↓</div></div>
-        <div><div class="metric-number text-teal-700">18%</div><div class="text-xs uppercase tracking-wide text-gray-500">Alert response ↑</div></div>
-      </div>
-      
-      <!-- "How I think" one-liner -->
-      <div class="mt-8 p-5 bg-gray-100 rounded-lg italic text-gray-700 border-l-4 border-teal-500">
-        “I don’t just ship features. I find the real bottleneck — often not what engineering thinks it is — and make the hard trade-off that unblocks growth.”
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex flex-wrap justify-between items-center gap-3">
+      <div class="text-xl font-bold bg-gradient-to-r from-teal-700 to-cyan-700 bg-clip-text text-transparent">IFTIA<span class="text-gray-900">R</span></div>
+      <div class="flex flex-wrap gap-5 text-sm font-medium text-gray-600">
+        <a href="#domains" class="nav-link">Domains</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
     </div>
-    
-    <!-- CASE STUDIES -->
-    <h2 class="text-2xl font-bold mb-6">Key product work</h2>
-    
-    <!-- Case 1: eJogajog -->
-    <div class="case-card bg-white rounded-xl shadow-sm p-6 mb-6">
-      <div class="flex flex-wrap justify-between items-start gap-2 border-b pb-3 mb-3">
-        <div><span class="font-bold text-lg">eJogajog Limited</span><span class="text-gray-500 ml-3 text-sm">B2B SaaS · Logistics & Payments</span></div>
-        <div class="text-sm bg-gray-100 px-3 py-1 rounded-full">May 2022 – Nov 2024</div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center mb-4">
-        <div><span class="block font-bold text-teal-700 text-xl">-35%</span><span class="text-xs">reconciliation errors</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">4h→5min</span><span class="text-xs">payment cycle</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">+22%</span><span class="text-xs">invoice settlement</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">12→45</span><span class="text-xs">enterprise clients</span></div>
-      </div>
-      <div class="space-y-2 text-gray-700 text-sm">
-        <p><span class="font-semibold">🔍 Problem:</span> Finance teams spent 3–4 hours/day manually uploading payments → errors blocked scaling.</p>
-        <p><span class="font-semibold">⚖️ Decision & trade-off:</span> Chose direct Bank API over third-party gateway or Excel. Trade-off: integration complexity + approval flow.</p>
-        <p><span class="font-semibold">📈 Result:</span> $8M+ annual transactions, 45+ clients, reconciliation errors dropped 35%.</p>
-      </div>
-      <details class="mt-4 text-sm text-gray-600">
-        <summary class="text-teal-700 font-medium cursor-pointer">+ Full case study (discovery, alternatives, KPIs)</summary>
-        <div class="mt-3 pt-3 border-t text-gray-600 space-y-2">
-          <p><strong>Discovery:</strong> Observed finance team daily workflow – manual copy-paste between 3 systems. Mapped end-to-end and identified that manual steps grew linearly with each client.</p>
-          <p><strong>Alternatives rejected:</strong> SOP improvement (symptom fix), gateway (cost + ledger complexity), Excel automation (fragile, not audit-ready).</p>
-          <p><strong>Implementation:</strong> Tiered email approval for high-value transactions, real-time confirmation, eliminated re-entry.</p>
-          <p><strong>Secondary impact:</strong> Automated invoicing + reminders cut payment cycle time 28%.</p>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-5 py-8 md:py-12">
+
+    <!-- Hero Section -->
+    <div class="flex flex-col lg:flex-row justify-between gap-8 mb-16">
+      <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+          Iftiar Uddin <span class="text-teal-700">Ahmed</span>
+        </h1>
+        <p class="text-xl text-gray-600 mt-3">Fintech & AI Product Management · Platform Scaling · Cross-functional Leadership</p>
+        
+        <!-- Japan signals (prominent) -->
+        <div class="flex flex-wrap gap-3 mt-5">
+          <span class="japan-badge px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1"><i class="fas fa-passport text-teal-700"></i> Engineer Visa: valid Dec 2029</span>
+          <span class="japan-badge px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1"><i class="fas fa-language text-teal-700"></i> Japanese N5→N4 (TCJ Osaka)</span>
+          <span class="japan-badge px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1"><i class="fas fa-city text-teal-700"></i> Tokyo / Osaka · Hybrid/On-site</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-sm font-medium"><i class="fas fa-bolt"></i> Available immediately</span>
         </div>
-      </details>
-    </div>
-    
-    <!-- Case 2: Showa (Japan, AI dashboard) -->
-    <div class="case-card bg-white rounded-xl shadow-sm p-6 mb-6">
-      <div class="flex flex-wrap justify-between items-start gap-2 border-b pb-3 mb-3">
-        <div><span class="font-bold text-lg">Showa Co., Ltd (Japan)</span><span class="text-gray-500 ml-3 text-sm">AI Predictive Maintenance</span></div>
-        <div class="text-sm bg-gray-100 px-3 py-1 rounded-full">Dec 2024 – Feb 2025</div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center mb-4">
-        <div><span class="block font-bold text-teal-700 text-xl">+18%</span><span class="text-xs">operator response time</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">Rejected</span><span class="text-xs">4-month AI retraining</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">2 weeks</span><span class="text-xs">to dashboard fix</span></div>
-      </div>
-      <div class="space-y-2 text-gray-700 text-sm">
-        <p><span class="font-semibold">🔍 Problem:</span> Alert fatigue – every alert looked equally urgent, operators missed critical machine issues.</p>
-        <p><span class="font-semibold">⚖️ Decision & trade-off:</span> Rejected rebuilding AI model (4 months) → redesigned dashboard hierarchy + added manual override tracking in 2 weeks.</p>
-        <p><span class="font-semibold">📈 Result:</span> Response time improved 18%. Override data became feedback loop for future model training.</p>
-      </div>
-      <details class="mt-4 text-sm text-gray-600">
-        <summary class="text-teal-700 font-medium cursor-pointer">+ Japan-specific context & collaboration</summary>
-        <div class="mt-3 pt-3 border-t text-gray-600 space-y-2">
-          <p><strong>Japanese team alignment:</strong> Took ownership with minimal handover, aligned Japanese-speaking engineering team around clear sprint priorities.</p>
-          <p><strong>KPI baseline introduced:</strong> Detection latency, response time, override frequency – first time the platform had measurable success criteria.</p>
-          <p><strong>Business context:</strong> Company ceased operations shortly after, but the dashboard redesign was adopted as the standard.</p>
+
+        <!-- Metric row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-8">
+          <div><div class="metric-number text-teal-700">$8M+</div><div class="text-xs uppercase tracking-wide text-gray-500">Annual transactions</div></div>
+          <div><div class="metric-number text-teal-700">40%</div><div class="text-xs uppercase tracking-wide text-gray-500">YoY user growth</div></div>
+          <div><div class="metric-number text-teal-700">35%</div><div class="text-xs uppercase tracking-wide text-gray-500">Reconciliation errors ↓</div></div>
+          <div><div class="metric-number text-teal-700">18%</div><div class="text-xs uppercase tracking-wide text-gray-500">Alert response ↑</div></div>
         </div>
-      </details>
-    </div>
-    
-    <!-- Case 3: ANTT Robotics (EdTech, gamification) -->
-    <div class="case-card bg-white rounded-xl shadow-sm p-6 mb-6">
-      <div class="flex flex-wrap justify-between items-start gap-2 border-b pb-3 mb-3">
-        <div><span class="font-bold text-lg">ANTT Robotics</span><span class="text-gray-500 ml-3 text-sm">EdTech Platform</span></div>
-        <div class="text-sm bg-gray-100 px-3 py-1 rounded-full">Jan 2020 – Apr 2022</div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center mb-4">
-        <div><span class="block font-bold text-teal-700 text-xl">+22%</span><span class="text-xs">DAU</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">+12%</span><span class="text-xs">monthly retention</span></div>
-        <div><span class="block font-bold text-teal-700 text-xl">Paused content</span><span class="text-xs">to build progression</span></div>
-      </div>
-      <div class="space-y-2 text-gray-700 text-sm">
-        <p><span class="font-semibold">🔍 Problem:</span> Kids dropped after 3 lessons – no sense of progress or achievement.</p>
-        <p><span class="font-semibold">⚖️ Decision & trade-off:</span> Paused new content for 2 sprints to build gamified progression (levels, badges, micro-achievements).</p>
-        <p><span class="font-semibold">📈 Result:</span> DAU +22%, retention +12% – motivation, not content, was the bottleneck.</p>
-      </div>
-      <details class="mt-4 text-sm text-gray-600">
-        <summary class="text-teal-700 font-medium cursor-pointer">+ Discovery & gamification mechanics</summary>
-        <div class="mt-3 pt-3 border-t text-gray-600 space-y-2">
-          <p><strong>Discovery:</strong> Usage data showed sharp drop-off after lesson 3. Prototyping with kids revealed they didn’t understand their level or what they would unlock next.</p>
-          <p><strong>Mechanics:</strong> Badges, level progression, unlockable content, immediate visual rewards for correct block coding.</p>
-          <p><strong>RBAC:</strong> Also designed multi-role architecture for 15+ institutions (admins, faculty, finance, students).</p>
+
+        <!-- Quote -->
+        <div class="mt-8 p-5 bg-gray-100 rounded-xl border-l-4 border-teal-500 italic text-gray-700">
+          “I don’t just ship features. I find the real bottleneck — often not what engineering thinks it is — and make the hard trade-off that unblocks growth.”
         </div>
-      </details>
+      </div>
+      <!-- Optional visual / contact card -->
+      <div class="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <h3 class="font-semibold text-gray-900 flex items-center gap-2"><i class="fas fa-paper-plane text-teal-600"></i> Contact</h3>
+        <div class="mt-3 space-y-2 text-gray-600">
+          <p><i class="far fa-envelope w-5"></i> iiftiarahmed@gmail.com</p>
+          <p><i class="fas fa-phone-alt w-5"></i> 090-8152-7117</p>
+          <p><i class="fab fa-linkedin w-5"></i> linkedin.com/in/iftiar</p>
+          <p><i class="fas fa-map-marker-alt w-5"></i> Osaka / Tokyo, Japan</p>
+        </div>
+        <a href="#" class="mt-5 inline-block bg-teal-700 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-teal-800 transition">Download Resume (PDF)</a>
+      </div>
     </div>
-    
-    <!-- Freelance + additional signal -->
-    <div class="mt-8 p-5 bg-gray-100 rounded-lg text-sm text-gray-700 border-l-4 border-teal-500">
-      <span class="font-bold">➕ Freelance Product Consultant (March 2025 – present)</span><br>
-      Reduced engineering rework 20–30% through pre-development prototyping. Working with 2–3 concurrent SaaS, workflow, and data platform clients.
-    </div>
-    
-    <!-- Footer / visa reaffirmation -->
-    <div class="mt-12 pt-6 text-center text-xs text-gray-400 border-t">
-      Ahmed Md Iftiar Uddin · Engineer visa valid through Dec 2029 · Actively studying Japanese at TCJ Osaka<br>
-      Portfolio updated March 2026 · Available for hybrid/on-site in Tokyo or Osaka
-    </div>
-  </div>
+
+    <!-- Domains Section -->
+    <section id="domains" class="mb-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2"><span class="w-8 h-1 bg-teal-500 rounded-full"></span> Domains of Impact</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm card-hover border border-gray-100">
+          <i class="fas fa-university text-3xl text-teal-700 mb-3"></i>
+          <h3 class="font-bold text-xl">Fintech & Payments</h3>
+          <p class="text-gray-600 text-sm mt-2">Bank API integration, ledger systems, automated reconciliation, payment workflows – scaled from 12 to 45+ enterprise clients processing $8M+.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm card-hover border border-gray-100">
+          <i class="fas fa-robot text-3xl text-teal-700 mb-3"></i>
+          <h3 class="font-bold text-xl">AI & Data Systems</h3>
+          <p class="text-gray-600 text-sm mt-2">HITL workflows, AI output interpretation, dashboard redesign (rejected 4-month retraining for 2-week fix), KPI frameworks.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm card-hover border border-gray-100">
+          <i class="fas fa-chart-line text-3xl text-teal-700 mb-3"></i>
+          <h3 class="font-bold text-xl">Platform Scaling 10→100</h3>
+          <p class="text-gray-600 text-sm mt-2">From early traction to $8M+ annual transactions, leading 16-member cross-functional teams with RICE prioritization.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Products (Work Experience) -->
+    <section id="products" class="mb-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2"><span class="w-8 h-1 bg-teal-500 rounded-full"></span> Key Products & Impact</h2>
+      
+      <!-- eJogajog -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex flex-wrap justify-between items-start gap-2 border-b pb-3 mb-3">
+            <div><span class="font-bold text-lg">eJogajog Limited</span><span class="text-gray-500 ml-2 text-sm">B2B SaaS · Logistics & Payments</span></div>
+            <div class="text-xs bg-gray-100 px-3 py-1 rounded-full">May 2022 – Nov 2024</div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center mb-4">
+            <div><span class="block font-bold text-teal-700 text-xl">-35%</span><span class="text-xs">reconciliation errors</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">4h→5min</span><span class="text-xs">payment cycle</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">+22%</span><span class="text-xs">invoice settlement</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">12→45</span><span class="text-xs">enterprise clients</span></div>
+          </div>
+          <div class="space-y-2 text-gray-700 text-sm">
+            <p><span class="font-semibold">🔍 Problem:</span> Finance teams spent 3–4h/day manual payment uploads → errors blocked scaling.</p>
+            <p><span class="font-semibold">⚖️ Decision:</span> Direct Bank API over gateway/Excel. Trade-off: integration complexity for elimination of manual steps.</p>
+            <p><span class="font-semibold">📈 Result:</span> $8M+ annual transactions, reconciliation errors dropped 35%.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showa Co. (Japan) -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex flex-wrap justify-between items-start gap-2 border-b pb-3 mb-3">
+            <div><span class="font-bold text-lg">Showa Co., Ltd (Japan)</span><span class="text-gray-500 ml-2 text-sm">AI Predictive Maintenance</span></div>
+            <div class="text-xs bg-gray-100 px-3 py-1 rounded-full">Dec 2024 – Feb 2025</div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center mb-4">
+            <div><span class="block font-bold text-teal-700 text-xl">+18%</span><span class="text-xs">operator response</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">Rejected</span><span class="text-xs">4-month AI retraining</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">2 weeks</span><span class="text-xs">to dashboard fix</span></div>
+          </div>
+          <div class="space-y-2 text-gray-700 text-sm">
+            <p><span class="font-semibold">🔍 Problem:</span> Alert fatigue – every alert looked urgent, operators missed critical issues.</p>
+            <p><span class="font-semibold">⚖️ Decision:</span> Rebuilt dashboard hierarchy + manual override tracking in 2 weeks instead of AI model retraining.</p>
+            <p><span class="font-semibold">📈 Result:</span> Response time +18%. Override data became feedback loop for model training.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANTT Robotics -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex flex-wrap justify-between items-start gap-2 border-b pb-3 mb-3">
+            <div><span class="font-bold text-lg">ANTT Robotics</span><span class="text-gray-500 ml-2 text-sm">EdTech Platform</span></div>
+            <div class="text-xs bg-gray-100 px-3 py-1 rounded-full">Jan 2020 – Apr 2022</div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center mb-4">
+            <div><span class="block font-bold text-teal-700 text-xl">+22%</span><span class="text-xs">DAU</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">+12%</span><span class="text-xs">retention</span></div>
+            <div><span class="block font-bold text-teal-700 text-xl">Paused content</span><span class="text-xs">to build progression</span></div>
+          </div>
+          <div class="space-y-2 text-gray-700 text-sm">
+            <p><span class="font-semibold">🔍 Problem:</span> Kids dropped after 3 lessons – no sense of progress.</p>
+            <p><span class="font-semibold">⚖️ Decision:</span> Paused new content for 2 sprints → built gamified progression (badges, levels).</p>
+            <p><span class="font-semibold">📈 Result:</span> DAU +22%, retention +12% – motivation was the bottleneck.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products / Case Study Cards (additional) -->
+    <section class="mb-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2"><span class="w-8 h-1 bg-teal-500 rounded-full"></span> Featured Projects</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+          <i class="fas fa-credit-card text-teal-700 text-2xl mb-2"></i>
+          <h3 class="font-bold text-lg">Automated Bank API Payment System</h3>
+          <p class="text-gray-600 text-sm mt-1">Reduced manual payment processing from 4 hours to 5 minutes. Tiered approval flow for high-value transactions.</p>
+          <div class="mt-3 flex gap-2 text-xs text-teal-700"><span class="bg-teal-50 px-2 py-0.5 rounded">API Integration</span><span class="bg-teal-50 px-2 py-0.5 rounded">Ledger redesign</span></div>
+        </div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+          <i class="fas fa-chart-simple text-teal-700 text-2xl mb-2"></i>
+          <h3 class="font-bold text-lg">AI Dashboard & Alert Prioritization</h3>
+          <p class="text-gray-600 text-sm mt-1">Improved operator response time 18% by redesigning visual hierarchy, rejecting costly AI retraining.</p>
+          <div class="mt-3 flex gap-2 text-xs text-teal-700"><span class="bg-teal-50 px-2 py-0.5 rounded">HITL workflows</span><span class="bg-teal-50 px-2 py-0.5 rounded">KPI baseline</span></div>
+        </div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+          <i class="fas fa-gamepad text-teal-700 text-2xl mb-2"></i>
+          <h3 class="font-bold text-lg">Gamified Progression Engine</h3>
+          <p class="text-gray-600 text-sm mt-1">Increased DAU 22% and retention 12% for EdTech platform – paused content production to build badges & levels.</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+          <i class="fas fa-truck-fast text-teal-700 text-2xl mb-2"></i>
+          <h3 class="font-bold text-lg">Pharmaceutical Delivery Automation</h3>
+          <p class="text-gray-600 text-sm mt-1">Eliminated paper memos, gave real-time visibility to depots, reduced reconciliation errors significantly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Achievements -->
+    <section id="achievements" class="mb-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2"><span class="w-8 h-1 bg-teal-500 rounded-full"></span> Key Achievements</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-4 text-center rounded-xl shadow-sm"><span class="font-bold text-teal-700 text-2xl">$8M+</span><p class="text-xs text-gray-500">Annual transaction volume</p></div>
+        <div class="bg-white p-4 text-center rounded-xl shadow-sm"><span class="font-bold text-teal-700 text-2xl">40%</span><p class="text-xs text-gray-500">YoY user growth</p></div>
+        <div class="bg-white p-4 text-center rounded-xl shadow-sm"><span class="font-bold text-teal-700 text-2xl">35%</span><p class="text-xs text-gray-500">Fewer reconciliation errors</p></div>
+        <div class="bg-white p-4 text-center rounded-xl shadow-sm"><span class="font-bold text-teal-700 text-2xl">20-30%</span><p class="text-xs text-gray-500">Less engineering rework</p></div>
+      </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section class="mb-20">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2"><span class="w-8 h-1 bg-teal-500 rounded-full"></span> Skills & Tools</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-sm">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold flex items-center gap-2"><i class="fas fa-brain text-teal-600"></i> Product Leadership</h3>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="skill-tag">Strategy & Roadmap</span><span class="skill-tag">PRD/BRD</span><span class="skill-tag">OKRs / RICE</span><span class="skill-tag">Dual-Track Discovery</span><span class="skill-tag">Agile/Scrum</span></div>
+          </div>
+          <div>
+            <h3 class="font-semibold flex items-center gap-2"><i class="fas fa-coins text-teal-600"></i> Fintech & Payments</h3>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="skill-tag">Bank API integration</span><span class="skill-tag">Ledger systems</span><span class="skill-tag">Reconciliation</span><span class="skill-tag">Payment workflows</span></div>
+          </div>
+          <div>
+            <h3 class="font-semibold flex items-center gap-2"><i class="fas fa-chart-line text-teal-600"></i> AI & Data</h3>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="skill-tag">HITL workflows</span><span class="skill-tag">KPI dashboards</span><span class="skill-tag">SQL</span><span class="skill-tag">Funnel analysis</span></div>
+          </div>
+          <div>
+            <h3 class="font-semibold flex items-center gap-2"><i class="fas fa-users text-teal-600"></i> Team & Stakeholder</h3>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="skill-tag">Cross-functional leadership (15+)</span><span class="skill-tag">Executive reporting</span><span class="skill-tag">Sprint governance</span></div>
+          </div>
+        </div>
+        <div class="mt-5 pt-4 border-t">
+          <h3 class="font-semibold">Tools</h3>
+          <div class="flex flex-wrap gap-2 mt-2"><span class="skill-tag">Jira</span><span class="skill-tag">Confluence</span><span class="skill-tag">Figma</span><span class="skill-tag">Mixpanel</span><span class="skill-tag">Looker</span><span class="skill-tag">Power BI</span><span class="skill-tag">SQL</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="mb-20">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Education</h2>
+          <div class="bg-white p-5 rounded-xl shadow-sm">
+            <p class="font-bold">B.Sc. in Computer Science & Engineering</p>
+            <p class="text-gray-600 text-sm">United International University, Dhaka</p>
+            <p class="text-gray-500 text-xs mt-1">Focus: Software Engineering, APIs, UX Research</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Certifications</h2>
+          <div class="bg-white p-5 rounded-xl shadow-sm space-y-2">
+            <p>✅ AI Product Management Certification – Product School (May 2024)</p>
+            <p>✅ Product Strategy Certification – Product School (May 2024)</p>
+            <p class="text-sm text-gray-500">+ Google UX Design, Agile Specializations (Coursera)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume & Contact -->
+    <section id="resume" class="mb-12">
+      <div class="bg-gradient-to-r from-teal-800 to-teal-600 rounded-2xl p-8 text-white">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <h2 class="text-2xl font-bold">Let's build something great together.</h2>
+            <p class="opacity-90 mt-1">Fintech, AI, or platform scaling – I’m available for hybrid/on-site in Tokyo/Osaka.</p>
+            <div class="flex gap-4 mt-3 text-sm">
+              <span><i class="far fa-envelope"></i> iiftiarahmed@gmail.com</span>
+              <span><i class="fas fa-phone-alt"></i> 090-8152-7117</span>
+            </div>
+          </div>
+          <a href="#" class="bg-white text-teal-800 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-gray-100 transition">Download Resume (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="text-center text-gray-400 text-xs border-t pt-8 mt-8">
+      <p>Ahmed Md Iftiar Uddin · Engineer visa valid through Dec 2029 · Actively studying Japanese at TCJ Osaka</p>
+      <p class="mt-1">Portfolio updated March 2026 · Built with <i class="fas fa-heart text-red-400"></i> for Japan opportunities</p>
+    </footer>
+  </main>
 </body>
 </html>
